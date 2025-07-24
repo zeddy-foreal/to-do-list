@@ -6,8 +6,11 @@ A stylish and interactive to-do list app built with HTML, CSS, and JavaScript. T
 
 - 🎨 Clean and modern design with excellent color balance  
 - 🌙 Light mode / Dark mode toggle  
-- 📝 Add tasks effortlessly by hitting (Enter) or clicking (Add)
-- 🗑️ Clear all completed tasks with one click
+- 📝 Add and remove tasks effortlessly  
+- ⌨️ Press `Enter` or click "Add" to create a task  
+- 🎯 Input auto-focus after adding a task for rapid entries  
+- 💾 Tasks are saved in local storage
+- 🗑️ Clear all completed tasks with one click 
 - ✅ Filter by:
   - Completed tasks
   - Uncompleted tasks  
