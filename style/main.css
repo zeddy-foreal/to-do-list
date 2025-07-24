@@ -1,0 +1,297 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "myfont";
+    background-color: transparent;
+    color: var(--main);
+    transition: 0.4s;
+    font-size: var(--mid);
+    text-decoration: none;
+    font-weight: 800;
+        letter-spacing: 0.1rem;
+}
+@font-face {
+    font-family: "logo";
+    src: url(../static/Font/logo_font.otf);
+}
+:root{
+    --body: #0e1221;
+    --background: #0f182a;
+    --hover: #305756;
+    --main: #6abbd9;
+    --text: #00ffba;
+    --body2:#10151e;
+    --big: 2rem;
+    --mid: 0.9rem;
+    --small: 0.7rem;
+    --width: 750px;
+    --height:450px;
+    --shadow:0 0 25px var(--text),0 0 10px var(--text);
+} 
+
+::placeholder{
+    color: var(--main);
+    opacity: 0.5;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body{
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body);
+    flex-direction: column;
+    gap: 50px;
+}
+.title{
+    display: flex
+;
+    width: var(--width);
+    justify-content: space-between;
+    align-items: baseline;
+}
+.title .logo{
+    font-family: "logo";
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+}
+
+i{
+    font-size: 0.8rem ;
+    
+}
+span{
+    font-size: inherit;
+}
+.title button i{
+    font-size: var(--big) !important;
+}
+.title button:hover i{
+    color: var(--text);
+    text-shadow: var(--shadow);
+}
+.wallpaper{
+    width: 100%;
+    height: 45%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+
+}
+.wallpaper .dark{
+    width: 100%;
+    height: 100%;
+    background-image: url(dark.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+}
+.wallpaper .light{
+    width: 100%;
+    height: 100%;
+    background-image: url(light.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+.container{
+    width: var(--width);
+    height: var(--height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.container header, .container .body{
+    background-color: var(--background);
+    width: 100%;
+    display: grid;
+    border: 2px solid var(--hover);
+    border-radius: 6px;
+}
+.container header{
+    height: 10%;
+    grid-template-columns: 85% 15%;
+    justify-content: space-between;
+}
+.container header input{
+    padding: 0 2rem;
+}
+.container header button:hover{
+    background-color: var(--hover);
+    color: var(--text);
+}
+.container .body{
+    grid-template-rows: 90% 10%;
+    height: 80%;
+    
+}
+.container footer{
+    display: grid
+;
+    grid-template-columns: 15% 50% 25%;
+    font-size: var(--small);
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: var(--body2);
+    border-top: 2px solid var(--hover);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.container footer *{
+    text-transform: uppercase;
+       font-size: var(--small);
+}
+.container footer .numberoftasks span{
+    color: var(--text);
+    text-shadow: var(--shadow);
+}
+.container footer .clicked{
+color: var(--text);
+text-shadow: var(--shadow);
+}
+.container footer div{
+    display: flex;
+    justify-content: space-around;
+}
+.container .body .missions{
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.container .body .missions .task{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--hover);
+    flex-shrink: 0;
+}
+.container .body .missions .task:hover{
+    background-color: var(--body);
+}
+.container .body .missions .task .task_details{
+    width: 100%;
+    height: 100%;
+    display: grid
+;
+    grid-template-rows: 100%;
+    grid-template-columns: 15% 85% ;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.container .body .missions .task .task_details button{
+    height: 100%;
+    aspect-ratio: 1;
+    border-left: 2px solid var(--hover);
+}
+.container .body .missions .task .task_details button i{
+    pointer-events: none;
+    color: inherit;
+}
+.container .body .missions .task .task_details button:hover{
+    background-color: var(--hover);
+    color: var(--text);
+}
+.container .body .missions  .box{
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-right: 2px solid var(--hover);
+}
+.container .body .missions .active{
+    order: 1;
+}
+.container .body .missions span i{
+    font-size: 1.3rem;
+    color: var(--hover);
+    opacity: 0.6;
+}
+
+.container .body .missions .active .box i{
+    opacity: 1;
+    color: var(--text);
+    text-shadow: var(--shadow);
+}
+.details{
+
+    width: 100%;
+
+    height: 100%;
+    display: flex
+;
+    justify-content: space-between;
+}
+.details p{
+    text-overflow: ellipsis;
+    padding-left: 2rem;
+    text-wrap: nowrap;
+    overflow: hidden;
+        width: 100%;
+    display: flex
+;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1.4rem;
+        text-transform: capitalize;
+
+}
+.container .body .missions .active .box  ~ .details p{
+    text-decoration: line-through;
+    opacity: 0.4;
+
+}
+@media (max-width:800px) {
+    :root{
+
+        --width: 550px;
+    }
+    html{
+        font-size: 13px;
+    }
+}
+@media (max-width:600px) {
+    :root{
+
+        --width: 450px;
+    }
+    html{
+        font-size: 13px;
+    }
+}
+@media (max-width:500px) {
+    :root{
+
+        --width: 90%;
+    }
+    html{
+        font-size: 13px;
+    }
+}
+@media (max-width:370px) {
+
+    html{
+        font-size: 10px;
+    }
+    i{
+        font-size: var(--mid);
+    }
+    .task{
+        height: 40px !important;
+    }
+    header{
+        height: 9% !important;
+    }
+}
